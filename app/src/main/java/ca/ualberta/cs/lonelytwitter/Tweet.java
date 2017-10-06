@@ -11,7 +11,7 @@ public abstract class Tweet implements Tweetable {
     private String id;
 
     public String getId(){ return id ;}
-    public String setId(){ this.id = id ;}
+    public void setId(String id){ this.id = id ;}
 
     public Tweet(String message){
         this.message = message;

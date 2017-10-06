@@ -41,7 +41,7 @@ public class ElasticsearchTweetController {
                     }
                     else
                     {
-                        Log.i("Error","Elasticsearch was not able to add the tweet")
+                        Log.i("Error","Elasticsearch was not able to add the tweet");
                     }
                 }
                 catch (Exception e) {
@@ -63,6 +63,7 @@ public class ElasticsearchTweetController {
             tweets = new ArrayList<NormalTweet>();
 
                 // TODO Build the query
+
             Search search = new Search.Builder(search_parameters[0]).addIndex("testing").addType("tweet").build();
 
             try {
