@@ -63,11 +63,12 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
-
+				String query = "{\n" + " \"query\": { \"term\": {\"message\":\"" + text + "\"} }\n" + "}";
 				try{
-					getTweetsTask.execute(text);
+					getTweetsTask.execute(query);
 					tweetList.clear();
 					tweetList.addAll(getTweetsTask.get());
+					adapter.addAll(tweetList);
 					adapter.notifyDataSetChanged();
 				} catch (Exception e){
 					Log.i("error","getTweetsTask failed");

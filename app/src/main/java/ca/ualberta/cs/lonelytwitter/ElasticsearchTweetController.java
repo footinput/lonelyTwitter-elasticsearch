@@ -64,7 +64,7 @@ public class ElasticsearchTweetController {
 
                 // TODO Build the query
 
-            Search search = new Search.Builder(search_parameters[0]).addIndex("testing").addType("tweet").build();
+            Search search = new Search.Builder(""+search_parameters[0]+"").addIndex("testing").addType("tweet").build();
 
             try {
                // TODO get the results of the query
